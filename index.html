@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>cutie</title>
+  </head>
+<div
+    style="
+      background-color: rgb(224, 96, 118);
+      width: 1920px;
+      height: 1080px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0% auto;
+      ">
+
+      <img src="thankyou.gif" width="500" height="500"; bottom="0" left="0"/>
+
+    <div class="opening" style="text-align: center; display: flex;">
+        <body>
+            <h1 style="font-size:84px;font-family: Verdana; ">HAPPY VALENTINES DAY!! </h1>
+
+            <audio id="audio">
+                <source src="bonk.mp3" type="audio/mpeg">
+            </audio>
+            
+
+            
+            <div style="display: flex; align-items: center; justify-content: center; bottom: 10%; left: 34%; position: absolute; font-size: medium;">
+                <p> heh </p>
+                <p style="font-family:verdana">sophia da coolest <br> <br>
+                    da swaggiest <br> ...<br>
+                    <br>
+                    w da most aura<br> <br>
+                    ...will youuuuuuuu <br> be my <b>valentine??</b> </p>
+            </div>
+
+
+
+            <div style="display: flex; align-items: center; justify-content: center; bottom: 6%; left: 48%; position: absolute;">
+                <button
+                    style="height:200px;width:200px;background-color: rgba(45, 255, 3, 0.87);font-size: 36;font-family: Verdana;" 
+                    onclick="displayMessage('yes')" id="yesButton">Yes
+                </button>
+                <button 
+                    style="height:200px;width:200px;background-color: rgb(255, 0, 0);font-size: 36;font-family: Verdana;""
+                    onclick="displayMessage('no'); playAudio();" id="noButton">No
+                </button>
+            </div>
+
+
+
+            <script>
+                
+                let attemps = 0;
+                let yesSelected = false;
+                
+                function displayMessage(response) {
+                    const responseMessage = document.getElementById('responseMessage');
+                    const yesButton = document.getElementById('yesButton');
+                    const noButton = document.getElementById('noButton');
+                    const nameElement = document.getElementById('name');
+                    var currentSize = parseInt(window.getComputedStyle(noButton).height);
+                    var currentSize2 = parseInt(window.getComputedStyle(yesButton).height);
+                    
+                    if (response === 'yes') {
+                        yesSelected = true;
+                        clickYes();
+                    } else {
+                        attemps++;
+                        const audio = document.getElementById('audio');
+                        audio.play();
+                            noButton.style.height = currentSize / 2 + "px";
+                            noButton.style.width = currentSize / 2 + "px";
+                        if (attemps >= 2) {
+                            clickNo();
+                            attemps = 0;
+ // reset attempts after showing the message
+                        } else {
+                            alert("***saddest face youve ever seen***");
+                        }
+                    }
+                function clickYes() {
+                    alert("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH <3 <3 <3");
+                    window.location.href = 'yes.html';
+                }
+                function clickNo() {
+                    const audio = document.getElementById('audio');
+                    audio.play();
+                    noButton.style.position = "absolute";
+                    noButton.style.top = Math.random() * (window.innerHeight - noButton.offsetHeight) + "px";
+                    noButton.style.left = Math.random() * (window.innerWidth - noButton.offsetWidth) + "px";
+                    yesButton.style.height = currentSize2 * 2 + "px";
+                    yesButton.style.width = currentSize2 * 2 + "px";
+                    if (attemps = 3) {
+                        alert("one more time:(");
+                    }
+                    if (attemps >= 4) {
+                        alert("one more time:(");
+                        attemps = 0;
+                    }
+                    else {
+                    alert("i think you hit the wrong one :(");
+                }
+            }
+        }
+        </script>
+        </body>
+    </div>
+
+</div>
+  
+</html>
